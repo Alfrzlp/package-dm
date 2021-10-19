@@ -1,7 +1,7 @@
 #' Merubah string menjadi vektor
 #'
-#' @param str character
-#' @param pemisah character
+#' @param str string
+#' @param pemisah character pemisah antar nilai
 #'
 #' @return vector
 #' @export
