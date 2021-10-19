@@ -12,7 +12,7 @@
 
 str2vec <- function (str, sep = " "){
     str = gsub(",", ".", str)
-    str = gsub(paste0(pemisah, "|\t|\n"), " ", str)
+    str = gsub(paste0(sep, "|\t|\n"), " ", str)
     str = strsplit(str, split = " ")[[1]]
     vec = as.numeric(str[stringr::str_detect(str, "[:alnum:]")])
     return(vec)

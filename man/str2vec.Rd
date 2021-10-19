@@ -4,12 +4,12 @@
 \alias{str2vec}
 \title{Merubah string menjadi vektor}
 \usage{
-str2vec(str, pemisah = " ")
+str2vec(str, sep = " ")
 }
 \arguments{
-\item{str}{character}
+\item{str}{string}
 
-\item{pemisah}{character}
+\item{sep}{character pemisah antar nilai seperti koma dll}
 }
 \value{
 vector
@@ -19,5 +19,5 @@ Merubah string menjadi vektor
 }
 \examples{
 str2vec('1.2 3.4 5 9 100')
-str2vec('1.2, 3.4, 5, 9, 100', pemisah = '\\\\,')
+str2vec('1.2, 3.4, 5, 9, 100', sep = '\\\\,')
 }
