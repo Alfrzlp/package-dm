@@ -1,3 +1,15 @@
+#' Merubah string menjadi vektor
+#'
+#' @param str character
+#' @param pemisah character
+#'
+#' @return vector
+#' @export
+#'
+#' @examples
+#' str2vec('1.2 3.4 5 9 100')
+#' str2vec('1.2, 3.4, 5, 9, 100', pemisah = '\\,')
+
 str2vec <- function (str, pemisah = " "){
     str = gsub(",", ".", str)
     str = gsub(paste0(pemisah, "|\t|\n"), " ", str)
