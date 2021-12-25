@@ -12,4 +12,6 @@ RoxygenNote: 7.1.1
 Imports: 
     stringr,
     reticulate,
-    tesseract
+    tesseract,
+    tidyr,
+    dplyr

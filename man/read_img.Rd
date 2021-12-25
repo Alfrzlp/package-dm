@@ -23,5 +23,5 @@ Membaca data dari gambar
 }
 \examples{
 read_img() # membaca dari clipboard
-read_img('D:/img.jpg', 'numbers')
+read_img("D:/img.jpg", "numbers")
 }

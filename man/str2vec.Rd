@@ -18,6 +18,6 @@ vector
 Merubah string menjadi vektor
 }
 \examples{
-str2vec('1.2 3.4 5 9 100')
-str2vec('1.2, 3.4, 5, 9, 100', sep = '\\\\,')
+str2vec("1.2 3.4 5 9 100")
+str2vec("1.2, 3.4, 5, 9, 100", sep = "\\\\,")
 }
