@@ -2,6 +2,7 @@
 
 hanya sebuah package untuk penggunaan pribadi. untuk menunjang pekerjaan sehari-hari
 
+<hr>
 # Workflow membuat package di R
 ## 1. Inisialisasi
 mengecek apakah nama package kita belum dipakai orang atau tidak
