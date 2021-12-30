@@ -104,7 +104,23 @@ read_string <- function(s, col_names = NULL, header = FALSE, tranpose = FALSE, .
 ```
 jangan lupa save file
 
-## 5. Pengujian dari fungsi
+## 5. Dokumentasi tentang package
+buat sebuah Rscript `my_package.R` di folder R. fungsinya isi NULL lalu sama seperti diatas
+```
+#' my_package: A package for data manipulation
+#'
+#' The my_package package provides three categories of important functions:
+#' str2vec, read_img and many more
+#'
+#' @section Foo functions:
+#' The foo functions ...
+#'
+#' @docType package
+#' @name my_package
+NULL
+
+```
+## 6. Pengujian dari fungsi
 jalankan ini pada `myworkflow.R` untuk meload library kita. kita bisa langsung menggunakannnya
 ```{r}
 load_all()
@@ -115,7 +131,7 @@ jika anda coba lihat dokumentasi fungsi `?read_string` masih belum ada. ada bisa
 document()
 ```
 
-## 6. dependensi package lain
+## 7. dependensi package lain
 jika anda ada menggunakan package lain. maka jalankan perintah seperti berikut di `myworkflow.R`
 ```{r}
 use_package("stringr")
@@ -124,7 +140,7 @@ use_package('tesseract')
 use_package('tidyr')
 use_package('dplyr')
 ```
-## 7. Package siap diinstall apa nggak ya?
+## 8. Package siap diinstall apa nggak ya?
 tinggal cek aja dengan
 ```
 check()
@@ -135,22 +151,30 @@ install()
 ```
 coba close project dan lihat di daftar package, nanti akan ada package kita
 
-## 8. Finishing
+## 9. Finishing
 penulisan syntax yang amburadul perlu dirapiin. jalankan perintah berikut `myworkflow.R` dan lihat bedanya pada setiap script fungsi kita
 ```
 styler::style_pkg() # restyles an entire R package.
 styler::style_dir() # restyles all files in a directory.
 ```
 
-## 9. Lisensi
+## 10. Lisensi
 anda bisa pakai yang lainnya juga
 ```
 use_mit_license("Ridson Alfarizal")
 ```
 
-## Install di tempat orang lain
+## 11. Install di tempat orang lain
 push perubahan ke github dan bisa coba install ke orang lain
 ```
 devtools::install_github('alfrzlp/my_repo')
 ```
 
+# Kesimpulan 
+alurnya
+- buat fungsi `use_r('nama_fungsi')` dan tambah dokumentasi
+- test fungsi `load()` jangan lupa `document()` untuk generate dokumentasi fungsi
+- tambah dependensi package jika ada
+- test keseluruhan dengan `check()`
+- push ke github
+- turu 
