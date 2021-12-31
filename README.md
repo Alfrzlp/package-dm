@@ -109,7 +109,7 @@ jangan lupa save file
 
 ## 5. Dokumentasi tentang package
 buat sebuah Rscript `my_package.R` di folder R. fungsinya isi NULL lalu sama seperti diatas
-```
+```r
 #' my_package: A package for data manipulation
 #'
 #' The my_package package provides three categories of important functions:
@@ -130,7 +130,7 @@ load_all()
 ```
 
 jika anda coba lihat dokumentasi fungsi `?read_string` masih belum ada. ada bisa jalankan perintah ini
-```
+```r
 document()
 ```
 
@@ -145,31 +145,31 @@ use_package('dplyr')
 ```
 ## 8. Package siap diinstall apa nggak ya?
 tinggal cek aja dengan
-```
+```r
 check()
 ```
 siap install nih? kita coba install di Rstudio kita
-```
+```r
 install()
 ```
 coba close project dan lihat di daftar package, nanti akan ada package kita
 
 ## 9. Finishing
 penulisan syntax yang amburadul perlu dirapiin. jalankan perintah berikut `myworkflow.R` dan lihat bedanya pada setiap script fungsi kita
-```
+```r
 styler::style_pkg() # restyles an entire R package.
 styler::style_dir() # restyles all files in a directory.
 ```
 
 ## 10. Lisensi
 anda bisa pakai yang lainnya juga
-```
+```r
 use_mit_license("Ridson Alfarizal")
 ```
 
 ## 11. Install di tempat orang lain
 push perubahan ke github dan bisa coba install ke orang lain
-```
+```r
 devtools::install_github('alfrzlp/my_repo')
 ```
 
