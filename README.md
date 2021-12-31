@@ -32,7 +32,8 @@ git remote add origin https://github.com/Alfrzlp/my_repo.git
 git push -u origin main
 ```
 ### Cara lain jika ada suka pakai Rstudio
-buat Rscript kosong terserah. jalankan perintah berikut. (tidak disave juga tidak mengapa) tapi save lebih baik misal diberinama `myworkflow.R`
+buat Rscript kosong terserah. jalankan perintah berikut. (tidak disave juga tidak mengapa) tapi save lebih baik misal diberi nama `myworkflow.R`. anda bisa save diluar project.
+
 ```{r}
 use_git(message = 'first commit')
 use_git_remote(name = 'origin', url = 'https://github.com/Alfrzlp/my_repo.git')

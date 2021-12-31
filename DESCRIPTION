@@ -3,7 +3,7 @@ Title: Manipulasi Data
 Version: 0.0.0.9
 Authors@R: 
     person("Ridson", "Alfarizal", email = "alfrzlp@gmail.com", role = c("aut", "cre"))
-Description: Manipulasi Data untuk Kebutuhan sehari-hari seperti convert string to data.frame, convert string to vector).
+Description: Manipulasi Data untuk Kebutuhan sehari-hari seperti convert string menjadi data.frame, convert string to vector dll.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
