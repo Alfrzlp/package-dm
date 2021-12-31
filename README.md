@@ -14,7 +14,7 @@ available::available('vgwr')
 1. New Project -> R Package
 
 ### Cara lain untuk inisialisasi
-```{r}
+```r
 library(devtools)
 create_package("path/to/mynamepackage")
 ```
@@ -34,7 +34,7 @@ git push -u origin main
 ### Cara lain jika ada suka pakai Rstudio
 buat Rscript kosong terserah. jalankan perintah berikut. (tidak disave juga tidak mengapa) tapi save lebih baik misal diberi nama `myworkflow.R`. anda bisa save diluar project.
 
-```{r}
+```r
 use_git(message = 'first commit')
 use_git_remote(name = 'origin', url = 'https://github.com/Alfrzlp/my_repo.git')
 ```
@@ -47,12 +47,12 @@ buka `Tools - version control - Project setup` pastikan telah terhubung dengan r
 ## 3. Membuat sebuah function
 
 sebagai contoh akan membuat sebuah fungsi bernama read_string. jalan perintah ini pada `myworkflow.R`
-```{r}
+```r
 use_r('read_string')
 ```
 anda akan diarah kepada file `read_string.R` silahkan isi dengan fungsi yang anda inginkan.
 misalnya :
-```{r}
+```r
 read_string <- function(s, col_names = NULL, header = FALSE, tranpose = FALSE, ...){
   dat <- utils::read.table(textConnection(s), header = ifelse(header & !tranpose, TRUE, FALSE), ...)
   if(tranpose){
@@ -69,7 +69,7 @@ jangan lupa jika menggunakan sebuah fungsi dari package lain untuk mencantumkan 
 ## 4. Menambahkan Dokumentasi pada fungsi
 letakan kursor pada fungsi lalu pilih `code -> insert roxygen skeleton`. contoh pengisisan :
 
-```{r}
+```r
 #' Membaca data.frame dari string
 #'
 #' @param s string
@@ -125,7 +125,7 @@ NULL
 ```
 ## 6. Pengujian dari fungsi
 jalankan ini pada `myworkflow.R` untuk meload library kita. kita bisa langsung menggunakannnya
-```{r}
+```r
 load_all()
 ```
 
@@ -136,7 +136,7 @@ document()
 
 ## 7. dependensi package lain
 jika anda ada menggunakan package lain. maka jalankan perintah seperti berikut di `myworkflow.R`
-```{r}
+```r
 use_package("stringr")
 use_package('reticulate')
 use_package('tesseract')
