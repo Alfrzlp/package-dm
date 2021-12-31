@@ -7,7 +7,7 @@ hanya sebuah package untuk penggunaan pribadi. untuk menunjang pekerjaan sehari-
 # Workflow membuat package di R
 ## 1. Inisialisasi
 mengecek apakah nama package kita belum dipakai orang atau tidak
-```
+```r
 available::available('vgwr')
 ```
 
