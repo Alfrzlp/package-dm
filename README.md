@@ -64,7 +64,7 @@ read_string <- function(s, col_names = NULL, header = FALSE, tranpose = FALSE, .
   return(dat)
 }
 ```
-jangan lupa jika menggunakan sebuah fungsi dari package lain untuk mencantumkan asal dari packagenya seperti `utils::read.table()` meskipun itu dari package utils. agar tidak terjadi konflik antar package ketika ada kesamaan nama fungsi
+jangan lupa jika menggunakan sebuah fungsi dari package lain untuk mencantumkan asal dari packagenya seperti `utils::read.table()` meskipun itu dari package utils. agar tidak terjadi konflik antar package ketika ada kesamaan nama fungsi. satu script R bisa berisi beberapa fungsi misalnya anda buat `utils.R` untuk beberapa fungsi.
 
 ## 4. Menambahkan Dokumentasi pada fungsi
 letakan kursor pada fungsi lalu pilih `code -> insert roxygen skeleton`. contoh pengisisan :
@@ -134,7 +134,40 @@ jika anda coba lihat dokumentasi fungsi `?read_string` masih belum ada. ada bisa
 document()
 ```
 
-## 7. dependensi package lain
+## 7. Menambahkan data
+misal ingin menambhakan data dari local. cukup lakukan hal berikut. 
+```r
+dataku <- read.csv('dataku.csv')
+use_data(dataku)
+
+pryr::object_size(dataku)
+````
+
+melihat penggunaan memory dari package. `mem_used` untuk melihat total ukuran dari semua object di memory 
+```r
+awal <- pryr::mem_used()
+load_all()
+pryr::mem_used() - awal
+```
+buat dokumentasi data di `R/data.R`
+```r
+#' dataku: prediksi harga xxx.
+#'
+#' A dataset containing the Cost and other attributes of almost 57.971 observation 36 variabels.
+#'
+#' @format A data frame with 57.971 rows and 36 variables:
+#' \describe{
+#'   \item{unit_cost}{xxx cost}
+#'   \item{x1}{variabel x1}
+#'   \item{x2}{variabel x2}
+#'   \item{date}{date}
+#'   \item{row_id}{baris id}
+#' }
+#' @source \url{https://apaanini}
+"dataku"
+```
+
+## 8. dependensi package lain
 jika anda ada menggunakan package lain. maka jalankan perintah seperti berikut di `myworkflow.R`
 ```r
 use_package("stringr")
@@ -143,7 +176,14 @@ use_package('tesseract')
 use_package('tidyr')
 use_package('dplyr')
 ```
-## 8. Package siap diinstall apa nggak ya?
+
+## 9. Membuat Readme.Rmd
+```r
+use_readme_rmd()
+build_readme()
+```
+
+## 10. Package siap diinstall apa nggak ya?
 tinggal cek aja dengan
 ```r
 check()
@@ -154,20 +194,21 @@ install()
 ```
 coba close project dan lihat di daftar package, nanti akan ada package kita
 
-## 9. Finishing
+## 11. Finishing
 penulisan syntax yang amburadul perlu dirapiin. jalankan perintah berikut `myworkflow.R` dan lihat bedanya pada setiap script fungsi kita
 ```r
 styler::style_pkg() # restyles an entire R package.
 styler::style_dir() # restyles all files in a directory.
 ```
+hanya untuk file di folder `R` saja. jika ingin file spesific `styler::style_file(path = "../all/mescript.R")`
 
-## 10. Lisensi
+## 12. Lisensi
 anda bisa pakai yang lainnya juga
 ```r
 use_mit_license("Ridson Alfarizal")
 ```
 
-## 11. Install di tempat orang lain
+## 13. Install di tempat orang lain
 push perubahan ke github dan bisa coba install ke orang lain
 ```r
 devtools::install_github('alfrzlp/my_repo')
@@ -180,4 +221,3 @@ alurnya
 - tambah dependensi package jika ada
 - test keseluruhan dengan `check()`
 - push ke github
-- turu 
