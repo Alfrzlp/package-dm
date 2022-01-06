@@ -28,7 +28,7 @@ git init
 git add .
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/Alfrzlp/my_repo.git
+git remote add origin https://github.com/Alfrzlp/vgwr.git
 git push -u origin main
 ```
 ### Cara lain jika ada suka pakai Rstudio
@@ -36,7 +36,7 @@ buat Rscript kosong terserah. jalankan perintah berikut. (tidak disave juga tida
 
 ```r
 use_git(message = 'first commit')
-use_git_remote(name = 'origin', url = 'https://github.com/Alfrzlp/my_repo.git')
+use_git_remote(name = 'origin', url = 'https://github.com/Alfrzlp/vgwr.git')
 ```
 saya lebih suka menggunakan terminal daripada dari Rstudio
 
@@ -200,7 +200,10 @@ penulisan syntax yang amburadul perlu dirapiin. jalankan perintah berikut `mywor
 styler::style_pkg() # restyles an entire R package.
 styler::style_dir() # restyles all files in a directory.
 ```
-hanya untuk file di folder `R` saja. jika ingin file spesific `styler::style_file(path = "../all/mescript.R")`
+hanya untuk file di folder `R` saja. jika ingin file spesific 
+```r
+styler::style_file(path = "../mescript.R")
+```
 
 ## 12. Lisensi
 anda bisa pakai yang lainnya juga
@@ -211,7 +214,7 @@ use_mit_license("Ridson Alfarizal")
 ## 13. Install di tempat orang lain
 push perubahan ke github dan bisa coba install ke orang lain
 ```r
-devtools::install_github('alfrzlp/my_repo')
+devtools::install_github('alfrzlp/vgwr')
 ```
 
 # Kesimpulan 
