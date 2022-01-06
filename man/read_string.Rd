@@ -25,10 +25,10 @@ Membaca data.frame dari string
 }
 \examples{
 s1 <-
-'A 112 20
+  "A 112 20
  YY 18 10
  XX 15 15
- DD 25 28'
+ DD 25 28"
 
 read_string(s1)
 read_string(s1, header = TRUE)

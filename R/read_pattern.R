@@ -13,7 +13,7 @@
 #'
 #' @examples
 #' s1 <-
-#' "David howw -.01 .01 0.01 very good -1 -22,1 333 bad .01
+#'   "David howw -.01 .01 0.01 very good -1 -22,1 333 bad .01
 #'  marie jane -.01 .01 0.01 moderate -1 -22.1 33.3 not bad  99."
 #'
 #' read_pattern(
