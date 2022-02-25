@@ -2,6 +2,18 @@
 
 hanya sebuah package untuk penggunaan pribadi. untuk menunjang pekerjaan sehari-hari
 
+## install
+```r
+remotes::install_github('alfrzlp/package-dm')
+```
+
+- copy2c -> copy object ke clipboard
+- read_pattern -> membaca pola string untuk dijadikan data.frame
+- read_string -> membaca string (dengan pola standart) menjadi data.frame
+- read_image -> membaca image menjadi data.frame
+- str2vec -> ubah string ke vector
+
+
 <hr>
 
 # Workflow membuat package di R
