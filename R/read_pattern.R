@@ -56,7 +56,11 @@ read_pattern <- function(
   }
 
   tidyr::extract(
-    data.frame(st = stringr::str_split(s, pattern = "\\n")[[1]]),
+    data.frame(
+      st = stringr::str_trim(
+        stringr::str_split(s, pattern = "\\n")[[1]]
+      )
+    ),
     col = 1, into = col_names, regex = pattern, ...
   )
 }
