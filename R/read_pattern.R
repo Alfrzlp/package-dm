@@ -1,4 +1,4 @@
-#' Mengektrak data.frame dari string berdasarkan pola
+#' Mengekstrak data.frame dari string berdasarkan pola
 #'
 #' @param s input string
 #' @param pos_non_angka posisi kolom yang merupakan non angka
@@ -43,8 +43,8 @@ read_pattern <- function(
   non_ak <- "(\\X*)"
 
   # Function
-  pattern <- c()
   if (is.null(pattern) & args <= 2) {
+    pattern <- c()
     if (!is.null(pos_non_angka)) pattern[pos_non_angka] <- non_ak
     if (!is.null(pos_angka)) pattern[pos_angka] <- ak
 
