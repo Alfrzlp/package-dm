@@ -41,24 +41,27 @@ read_pattern <- function(
   args <- is.numeric(pos_non_angka) + is.numeric(pos_angka)
   ak <- "(-*\\d*,*\\.*\\d*|\\d*)"
   non_ak <- "(\\X*)"
+
   # Function
-  if (is.null(pattern) & args == 2) {
-    pattern <- c()
-    pattern[pos_angka] <- ak
-    pattern[pos_non_angka] <- non_ak
+  pattern <- c()
+  if (is.null(pattern) & args <= 2) {
+    if (!is.null(pos_non_angka)) pattern[pos_non_angka] <- non_ak
+    if (!is.null(pos_angka)) pattern[pos_angka] <- ak
+
     pattern <- paste0(pattern, collapse = sep)
   } else if (!is.null(pattern) & args == 0) {
     # pert True untuk melihat belakang ada ( atau tidak (?<=yg dicari)
     pattern <- gsub("(?<=\\()\\s*angka", "-*\\\\d*,*\\\\.*\\\\d*|\\\\d*", pattern, ignore.case = T, perl = T)
     pattern <- gsub("(?<=\\()\\s*non_*\\s*angka", "\\\\X*", pattern, ignore.case = T, perl = T)
   } else {
-    warning("Silahkan isi `pos_non_angka` dan `pos_angka` dengan numeric vector. jika anda ingin custom silakan isi `pattern` dan biarkan kosong `pos_non_angka` dan `pos_angka`")
+    warning("Silahkan isi minimal salah satu`pos_non_angka` dan `pos_angka` dengan numeric vector. jika anda ingin custom silakan isi `pattern` dan biarkan kosong `pos_non_angka` dan `pos_angka`")
   }
 
   tidyr::extract(
     data.frame(
       st = stringr::str_trim(
-        stringr::str_split(s, pattern = "\\n")[[1]]
+        stringr::str_split(s, pattern = "\\n")[[1]],
+        side = 'both'
       )
     ),
     col = 1, into = col_names, regex = pattern, ...
