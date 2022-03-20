@@ -57,12 +57,13 @@ read_pattern <- function(
     warning("Silahkan isi minimal salah satu`pos_non_angka` dan `pos_angka` dengan numeric vector. jika anda ingin custom silakan isi `pattern` dan biarkan kosong `pos_non_angka` dan `pos_angka`")
   }
 
+  s <- stringr::str_split(s, pattern = "\\n")[[1]]
+  # remove blank
+  s <- s[nchar(s) > 0]
+
   tidyr::extract(
     data.frame(
-      st = stringr::str_trim(
-        stringr::str_split(s, pattern = "\\n")[[1]],
-        side = 'both'
-      )
+      st = stringr::str_trim(s, side = 'both')
     ),
     col = 1, into = col_names, regex = pattern, ...
   )
