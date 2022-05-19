@@ -2,7 +2,7 @@
 % Please edit documentation in R/read_pattern.R
 \name{read_pattern}
 \alias{read_pattern}
-\title{Mengektrak data.frame dari string berdasarkan pola}
+\title{Mengekstrak data.frame dari string berdasarkan pola}
 \usage{
 read_pattern(
   s,
@@ -33,7 +33,7 @@ read_pattern(
 data.frame
 }
 \description{
-Mengektrak data.frame dari string berdasarkan pola
+Mengekstrak data.frame dari string berdasarkan pola
 }
 \examples{
 s1 <-

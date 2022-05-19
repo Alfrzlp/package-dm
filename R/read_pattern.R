@@ -31,8 +31,7 @@
 #'   pattern = "(nonangka)\\s(angka)\\s;\\s(nonangka)",
 #'   col_names = c("nama", "nim", "kelas")
 #' )
-read_pattern <- function(
-                         # parameter
+read_pattern <- function( # parameter
                          s, pos_non_angka = NULL, pos_angka = NULL,
                          col_names = paste0("v", 1:length(c(pos_non_angka, pos_angka))),
                          sep = "\\s",
@@ -63,7 +62,7 @@ read_pattern <- function(
 
   tidyr::extract(
     data.frame(
-      st = stringr::str_trim(s, side = 'both')
+      st = stringr::str_trim(s, side = "both")
     ),
     col = 1, into = col_names, regex = pattern, ...
   )

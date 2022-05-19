@@ -2,8 +2,10 @@
 
 export("%<-%")
 export(copy2c)
+export(get_diff)
 export(read_img)
 export(read_pattern)
 export(read_string)
+export(separator_convert)
 export(str2vec)
 import(zeallot)
