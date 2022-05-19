@@ -18,8 +18,8 @@ data.frame
 Mendapatkan Perbedaan dari 2 vector dari kedua sisi
 }
 \examples{
-x <- c('Tegal Waru', 'Purwakarta', 'Saguling', 'Cipongkor', 'Cikande')
-y <- c('Tegalwaru', 'purwakarta', 'Saguling', 'Cipongkor', 'Cipangeran')
+x <- c("Tegal Waru", "Purwakarta", "Saguling", "Cipongkor", "Cikande")
+y <- c("Tegalwaru", "purwakarta", "Saguling", "Cipongkor", "Cipangeran")
 
 get_diff(x, y)
 }

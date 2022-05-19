@@ -16,7 +16,7 @@ Imports:
     tidyr,
     dplyr,
     zeallot,
-    crayon,
-    cli
+    cli,
+    conflicted
 Depends: 
     R (>= 4.0)
