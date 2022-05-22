@@ -11,8 +11,6 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Imports: 
     stringr,
-    reticulate,
-    tesseract,
     tidyr,
     dplyr,
     zeallot,
