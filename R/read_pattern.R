@@ -31,14 +31,15 @@
 #'   pattern = "(nonangka)\\s(angka)\\s;\\s(nonangka)",
 #'   col_names = c("nama", "nim", "kelas")
 #' )
-read_pattern <- function( # parameter
+read_pattern <- function(# parameter
                          s, pos_non_angka = NULL, pos_angka = NULL,
                          col_names = paste0("v", 1:length(c(pos_non_angka, pos_angka))),
                          sep = "\\s",
                          pattern = NULL,
                          ...) {
   args <- is.numeric(pos_non_angka) + is.numeric(pos_angka)
-  ak <- "(-*\\d*,*\\.*\\d*|\\d*)"
+  # maksimal 4 titik atau koma
+  ak <- "(-*\\d*,*\\.*\\d*,*\\.*\\d*,*\\.*\\d*,*\\.*\\d*|\\d*)"
   non_ak <- "(\\X*)"
 
   # Function
@@ -53,7 +54,7 @@ read_pattern <- function( # parameter
     pattern <- gsub("(?<=\\()\\s*angka", "-*\\\\d*,*\\\\.*\\\\d*|\\\\d*", pattern, ignore.case = T, perl = T)
     pattern <- gsub("(?<=\\()\\s*non_*\\s*angka", "\\\\X*", pattern, ignore.case = T, perl = T)
   } else {
-    warning("Silahkan isi minimal salah satu`pos_non_angka` dan `pos_angka` dengan numeric vector. jika anda ingin custom silakan isi `pattern` dan biarkan kosong `pos_non_angka` dan `pos_angka`")
+    warning("Silahkan isi minimal salah satu`pos_non_angka` atau `pos_angka` dengan numeric vector. jika anda ingin custom silakan isi `pattern` dan biarkan kosong `pos_non_angka` dan `pos_angka`")
   }
 
   s <- stringr::str_split(s, pattern = "\\n")[[1]]
